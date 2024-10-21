@@ -52,34 +52,38 @@ To set up GitHub Actions, follow these steps:
      push:
        branches:
          - main
-
+   
    jobs:
      build:
        runs-on: ubuntu-latest
 
-       steps:
-       - name: Check out code
-         uses: actions/checkout@v3
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v3
+      with:
+        persist-credentials: false  # Fixes Git checkout issues
+        fetch-depth: 0  # Fetch full history to avoid shallow clone issues
 
-       - name: Set up Node.js
-         uses: actions/setup-node@v3
-         with:
-           node-version: '16'
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Updated to Node.js 20 to avoid deprecation
 
-       - name: Install dependencies
-         run: npm install
+    - name: Install dependencies
+      run: npm install
 
-       - name: Run tests
-         run: npm test
-       
-       - name: Build project
-         run: npm run build
+    - name: Run tests
+      run: npm test
 
-       - name: Deploy to GitHub Pages
-         uses: peaceiris/actions-gh-pages@v3
-         with:
-           github_token: ${{ secrets.GITHUB_TOKEN }}
-           publish_dir: ./dist
+    - name: Build project
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+
    ```
 
 4. Commit the workflow and push some code to trigger the action. Magic will happen.

@@ -104,6 +104,13 @@ To make sure your GitHub Actions run smoothly:
 3. Scroll down to **Workflow permissions**.
 4. Ensure **Read and write permissions** is selected. This allows GitHub Actions to push commits, create pull requests, and perform other actions in your repository.
 
+## 🌐 Push Your Project Live
+Here’s the part where you show off.
+
+Make sure you’ve pushed everything.
+Go to Settings > Pages in your GitHub repo.
+Set your source branch to main or gh-pages according to yourself.
+
 ## 🏆 You Did It!
 Congrats! You’ve just set up your first CI/CD pipeline. Now, every time you push to main, GitHub Actions will run your tests, build the project, and deploy it—all without you lifting a finger.
 

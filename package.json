@@ -1,0 +1,10 @@
+{
+  "name": "cicd-party-project",
+  "version": "1.0.0",
+  "description": "A fun CI/CD project with GitHub Actions",
+  "scripts": {
+    "test": "echo \"No tests yet!\"",
+    "build": "echo \"Building project...\""
+  },
+  "dependencies": {}
+}
